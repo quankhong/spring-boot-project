@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "bfd2c10a-a040-496a-8794-569208ae5a9b",
+		"name": "Powerledger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12382585"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/v1/batteries",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjc4NjIxOTg0LCJleHAiOjE2Nzg2NTc5ODR9.nK8tGVzWnlY67rFFx0687khsIn6lNvWxG0qQMsDXJJc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/batteries?postcode_start=60001&postcode_end=70000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"batteries"
+					],
+					"query": [
+						{
+							"key": "postcode_start",
+							"value": "60001"
+						},
+						{
+							"key": "postcode_end",
+							"value": "70000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/user/access-token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user\",\r\n    \"password\": \"user\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/access-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"access-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/batteries",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjY1OTQwNDc1LCJleHAiOjE2NjU5NzY0NzV9.7wQBoBXzB3kA2krHis3UHd4vEsdEt61I4_URxP5n-9g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"batteries\" : [\r\n        {\r\n            \"name\": \"battery4\",\r\n            \"postcode\": \"6010\",\r\n            \"capacity\": 170\r\n        },\r\n        \r\n        {\r\n            \"name\": \"battery5\",\r\n            \"postcode\": \"6010\",\r\n            \"capacity\": 170\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/batteries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"batteries"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
