@@ -52,13 +52,13 @@ Request Body
 >     "batteries" : [
 >         {
 >             "name": "battery4",
->             "postcode": "6010",
->             "capacity": 170
+>             "postcode": "60100",
+>             "capacity": 1700
 >         },
 >         {
 >             "name": "battery5",
->             "postcode": "6010",
->             "capacity": 170
+>             "postcode": "60100",
+>             "capacity": 1700
 >         }
 >     ]
 > }
