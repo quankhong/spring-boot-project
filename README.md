@@ -29,6 +29,7 @@ java -jar jarfilename.jar
 Currently have one 1 dummy user
 
 POST /api/v1/user/access-token
+
 Request Headers
 > Content-Type: application/json
 
@@ -41,6 +42,7 @@ Request Body
 ###  Add batteries
 
 POST /api/v1/batteries
+
 Request Headers
 > Content-Type: application/json
 > Authorization: Bearer xxx
@@ -63,6 +65,7 @@ Request Body
 
 ### Get batteries
 GET /api/v1/batteries?postcode_start=60001&postcode_end=70000
+
 Request Headers
 > Content-Type: application/json
 > Authorization: Bearer xxx
