@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.plant.power.system.database.entity.Battery;
 import com.plant.power.system.database.repository.BatteryRepository;
-import com.plant.power.system.dto.indto.BatteryInDto;
+import com.plant.power.system.dto.indto.BatteryInfo;
 import com.plant.power.system.dto.outdto.BaseOutDto;
 import com.plant.power.system.dto.outdto.BatteryListOutDto;
 import com.plant.power.system.service.interfaces.BatteryService;
@@ -32,12 +32,12 @@ public class BatteryServiceImpl implements BatteryService {
 	private BatteryRepository batteryRepository;
 
 	@Override
-	public void addBatteries(BatteryInDto inDto) {
+	public void addBatteries(List<BatteryInfo> batteries) {
 		log.debug("Start addBatteries");
 
 		// We want to add some checks to the user input data, in this case I check for
 		// duplicate battery by name
-		List<String> invalidNameList = inDto.getBatteries().stream()
+		List<String> invalidNameList = batteries.stream()
 				.filter(obj -> batteryRepository.findByName(obj.getName()).isPresent()).map(obj -> obj.getName())
 				.toList();
 
@@ -46,7 +46,7 @@ public class BatteryServiceImpl implements BatteryService {
 					new String[] { invalidNameList.toString() }, null));
 		}
 
-		inDto.getBatteries().stream().forEach(inputBattery -> {
+		batteries.stream().forEach(inputBattery -> {
 			Battery battery = new Battery();
 			battery.setName(inputBattery.getName().trim());
 			battery.setPostcode(inputBattery.getPostcode().trim());

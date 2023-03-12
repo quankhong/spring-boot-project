@@ -22,10 +22,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.plant.power.system.database.entity.Battery;
 import com.plant.power.system.database.repository.BatteryRepository;
-import com.plant.power.system.dto.indto.BatteryInDto;
 import com.plant.power.system.dto.indto.BatteryInfo;
 import com.plant.power.system.dto.outdto.BatteryListOutDto;
-import com.plant.power.system.service.impl.BatteryServiceImpl;
 
 class BatteryServiceImplTest {
 
@@ -45,12 +43,9 @@ class BatteryServiceImplTest {
 		List<BatteryInfo> batteryInfos = new ArrayList<>();
 		batteryInfos.add(batteryInfo);
 
-		BatteryInDto indto = new BatteryInDto();
-		indto.setBatteries(batteryInfos);
-
 		given(batteryRepository.findByName(anyString())).willReturn(Optional.empty());
 
-		batteryServiceImpl.addBatteries(indto);
+		batteryServiceImpl.addBatteries(batteryInfos);
 		verify(batteryRepository, times(1)).save(any());
 	}
 
@@ -64,16 +59,13 @@ class BatteryServiceImplTest {
 		List<BatteryInfo> batteryInfos = new ArrayList<>();
 		batteryInfos.add(batteryInfo);
 
-		BatteryInDto indto = new BatteryInDto();
-		indto.setBatteries(batteryInfos);
-
 		Battery battery = new Battery();
 		battery.setName("testBattery");
 
 		given(batteryRepository.findByName(anyString())).willReturn(Optional.of(battery));
 
 		ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> {
-			batteryServiceImpl.addBatteries(indto);
+			batteryServiceImpl.addBatteries(batteryInfos);
 	    });
 		
 		assertEquals(exception.getStatus(), HttpStatus.CONFLICT);
@@ -90,16 +82,13 @@ class BatteryServiceImplTest {
 		List<BatteryInfo> batteryInfos = new ArrayList<>();
 		batteryInfos.add(batteryInfo);
 
-		BatteryInDto indto = new BatteryInDto();
-		indto.setBatteries(batteryInfos);
-
 		Battery battery = new Battery();
 		battery.setName("testBattery");
 
 		given(batteryRepository.findByName(anyString())).willThrow(RuntimeException.class);
 
 		RuntimeException exception = assertThrows(RuntimeException.class, () -> {
-			batteryServiceImpl.addBatteries(indto);
+			batteryServiceImpl.addBatteries(batteryInfos);
 	    });
 		
 		verify(batteryRepository, times(0)).save(any());

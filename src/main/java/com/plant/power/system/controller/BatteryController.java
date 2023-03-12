@@ -1,5 +1,7 @@
 package com.plant.power.system.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.plant.power.system.dto.indto.BatteryInDto;
+import com.plant.power.system.dto.indto.BatteryInfo;
 import com.plant.power.system.dto.outdto.BaseOutDto;
 import com.plant.power.system.service.interfaces.BatteryService;
 
@@ -28,9 +30,9 @@ public class BatteryController {
 	private BatteryService batteryService;
 
 	@PostMapping
-	public ResponseEntity<Object> addBatteries(@Valid @RequestBody BatteryInDto inDto) {
+	public ResponseEntity<Object> addBatteries(@Valid @RequestBody List<BatteryInfo> batteries) {
 		log.debug("Add new batteries");
-		batteryService.addBatteries(inDto);
+		batteryService.addBatteries(batteries);
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 

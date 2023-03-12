@@ -23,7 +23,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/batteries?postcode_start=60001&postcode_end=70000",
+					"raw": "http://localhost:8080/api/v1/batteries?postcode_start=6000&postcode_end=7000",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -37,11 +37,11 @@
 					"query": [
 						{
 							"key": "postcode_start",
-							"value": "60001"
+							"value": "6000"
 						},
 						{
 							"key": "postcode_end",
-							"value": "70000"
+							"value": "7000"
 						}
 					]
 				}
@@ -92,13 +92,13 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjY1OTQwNDc1LCJleHAiOjE2NjU5NzY0NzV9.7wQBoBXzB3kA2krHis3UHd4vEsdEt61I4_URxP5n-9g",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjc4NjM1NTgyLCJleHAiOjE2Nzg2NzE1ODJ9.RDmONgEsFTVyAaqQROk2gG-26unKl4txv3oZNZmkW50",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"batteries\" : [\r\n        {\r\n            \"name\": \"battery4\",\r\n            \"postcode\": \"6010\",\r\n            \"capacity\": 170\r\n        },\r\n        \r\n        {\r\n            \"name\": \"battery5\",\r\n            \"postcode\": \"6010\",\r\n            \"capacity\": 170\r\n        }\r\n    ]\r\n}"
+					"raw": "[\r\n  {\r\n    \"name\": \"Cannington\",\r\n    \"postcode\": \"6107\",\r\n    \"capacity\": 13500\r\n  },\r\n  {\r\n    \"name\": \"Midland\",\r\n    \"postcode\": \"6057\",\r\n    \"capacity\": 50500\r\n  },\r\n  {\r\n    \"name\": \"Hay Street\",\r\n    \"postcode\": \"6000\",\r\n    \"capacity\": 23500\r\n  },\r\n  {\r\n    \"name\": \"Mount Adams\",\r\n    \"postcode\": \"6525\",\r\n    \"capacity\": 12000\r\n  },\r\n  {\r\n    \"name\": \"Koolan Island\",\r\n    \"postcode\": \"6733\",\r\n    \"capacity\": 10000\r\n  },\r\n  {\r\n    \"name\": \"Armadale\",\r\n    \"postcode\": \"6992\",\r\n    \"capacity\": 25000\r\n  },\r\n  {\r\n    \"name\": \"Lesmurdie\",\r\n    \"postcode\": \"6076\",\r\n    \"capacity\": 13500\r\n  },\r\n  {\r\n    \"name\": \"Kalamunda\",\r\n    \"postcode\": \"6076\",\r\n    \"capacity\": 13500\r\n  },\r\n  {\r\n    \"name\": \"Carmel\",\r\n    \"postcode\": \"6076\",\r\n    \"capacity\": 36000\r\n  },\r\n  {\r\n    \"name\": \"Bentley\",\r\n    \"postcode\": \"6102\",\r\n    \"capacity\": 85000\r\n  },\r\n  {\r\n    \"name\": \"Akunda Bay\",\r\n    \"postcode\": \"2084\",\r\n    \"capacity\": 13500\r\n  },\r\n  {\r\n    \"name\": \"Werrington County\",\r\n    \"postcode\": \"2747\",\r\n    \"capacity\": 13500\r\n  },\r\n  {\r\n    \"name\": \"Bagot\",\r\n    \"postcode\": \"0820\",\r\n    \"capacity\": 27000\r\n  },\r\n  {\r\n    \"name\": \"Yirrkala\",\r\n    \"postcode\": \"0880\",\r\n    \"capacity\": 13500\r\n  },\r\n  {\r\n    \"name\": \"University of Melbourne\",\r\n    \"postcode\": \"3010\",\r\n    \"capacity\": 85000\r\n  },\r\n  {\r\n    \"name\": \"Norfolk Island\",\r\n    \"postcode\": \"2899\",\r\n    \"capacity\": 13500\r\n  },\r\n  {\r\n    \"name\": \"Ootha\",\r\n    \"postcode\": \"2875\",\r\n    \"capacity\": 13500\r\n  },\r\n  {\r\n    \"name\": \"Kent Town\",\r\n    \"postcode\": \"5067\",\r\n    \"capacity\": 13500\r\n  },\r\n  {\r\n    \"name\": \"Northgate Mc\",\r\n    \"postcode\": \"9464\",\r\n    \"capacity\": 13500\r\n  },\r\n  {\r\n    \"name\": \"Gold Coast Mc\",\r\n    \"postcode\": \"9729\",\r\n    \"capacity\": 50000\r\n  }\r\n]"
 				},
 				"url": {
 					"raw": "http://localhost:8080/api/v1/batteries",

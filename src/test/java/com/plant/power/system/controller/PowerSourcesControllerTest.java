@@ -3,11 +3,14 @@ package com.plant.power.system.controller;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import com.plant.power.system.controller.BatteryController;
-import com.plant.power.system.dto.indto.BatteryInDto;
+import com.plant.power.system.dto.indto.BatteryInfo;
 import com.plant.power.system.service.interfaces.BatteryService;
 
 class PowerSourcesControllerTest {
@@ -16,9 +19,9 @@ class PowerSourcesControllerTest {
 
 	@Test
 	void testAddBattery() {
-		BatteryInDto inDto = new BatteryInDto();
-		controller.addBatteries(inDto);
-		verify(batteryService, times(1)).addBatteries(inDto);
+		List<BatteryInfo> batteryInfos = new ArrayList<>();
+		controller.addBatteries(batteryInfos);
+		verify(batteryService, times(1)).addBatteries(batteryInfos);
 	}
 
 	@Test
