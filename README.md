@@ -58,12 +58,12 @@ Request Body
 {
     "batteries" : [
         {
-            "name": "battery4",
+            "name": "indo",
             "postcode": "60100",
             "capacity": 1700
         },
         {
-            "name": "battery5",
+            "name": "canada",
             "postcode": "60100",
             "capacity": 1700
         }
