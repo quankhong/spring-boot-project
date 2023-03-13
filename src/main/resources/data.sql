@@ -1,4 +1,4 @@
 insert into battery(id, name, postcode, capacity)
-values (default, 'battery1', '60040', 1750),
-       (default, 'battery3', '60060', 8250),
-       (default, 'battery2', '60000', 6000);
+values (default, 'vietnam', '57840', 1750),
+       (default, 'malaysia', '67960', 8250),
+       (default, 'us', '60123', 6000);
